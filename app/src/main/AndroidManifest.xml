@@ -5,15 +5,14 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.DualActivities">
         <activity android:name=".DisplayActivity"
             android:label="@string/activity_two_name">
         </activity>
-        <activity android:name=".SelectionActivity"
-            android:label="@string/activity_one_name">
+        <activity android:name=".SelectionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

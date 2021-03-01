@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Image Viewer App</string>
+    <string name="app_name">Cat Image Viewer</string>
     <string name="activity_one_name">Selector</string>
     <string name="activity_two_name">Display</string>
 </resources>

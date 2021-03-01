@@ -33,18 +33,18 @@ public class SelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle(R.string.activity_one_name);
 
-        // = findViewById(R.id.main_img_display);
         menu = findViewById(R.id.menu_spinner);
 
         ArrayList<Image> listToAdapter = new ArrayList<Image>(); //Create the array list to hold all the Image objects
         //In this part below i am setting up a new Image object for each image
         listToAdapter.add(new Image("Please select the cat of your choosing", 0));
-        listToAdapter.add(new Image("black_kit", R.drawable.black_kit));
-        listToAdapter.add(new Image("gray_kit", R.drawable.gray_kit));
-        listToAdapter.add(new Image("red_kit", R.drawable.red_kit));
+        listToAdapter.add(new Image("black kit", R.drawable.black_kit));
+        listToAdapter.add(new Image("gray kit", R.drawable.gray_kit));
+        listToAdapter.add(new Image("red kit", R.drawable.red_kit));
         listToAdapter.add(new Image("tigre", R.drawable.tigre));
-        listToAdapter.add(new Image("white_kit", R.drawable.white_kit));
+        listToAdapter.add(new Image("white kit", R.drawable.white_kit));
 
         AdapterForCats = new ImageAdapter(this ,listToAdapter); // set up the new adapter
 
@@ -58,9 +58,11 @@ public class SelectionActivity extends AppCompatActivity {
                     return;
 
                 int passableImage = ((Image)parent.getItemAtPosition(position)).getPicture(); //get the immage at the position ready as an int
+                String passableDescription = ((Image)parent.getItemAtPosition(position)).getName();
 
                 Intent intent = new Intent(SelectionActivity.this, DisplayActivity.class); //set up the intent
                 intent.putExtra("image", passableImage); //add image to intent
+                intent.putExtra("description", passableDescription);
                 startActivity(intent); //start the new activity
                 menu.setSelection(0); // to reset it upon returning
             }
