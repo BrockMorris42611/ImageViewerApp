@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -27,7 +28,8 @@ public class SelectionActivity extends AppCompatActivity {
 
     ImageAdapter AdapterForCats;
     boolean touched = false;
-    Spinner menu;
+    GridView menu;
+    TextView instructions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +37,17 @@ public class SelectionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle(R.string.activity_one_name);
 
-        menu = findViewById(R.id.menu_spinner);
+        menu = findViewById(R.id.menu_gridView);
+
+        menu.setNumColumns(3);
+
+        instructions = findViewById(R.id.instruct_text_view);
+
+        instructions.setText(R.string.instructions);
+
 
         ArrayList<Image> listToAdapter = new ArrayList<Image>(); //Create the array list to hold all the Image objects
         //In this part below i am setting up a new Image object for each image
-        listToAdapter.add(new Image("Please select the cat of your choosing", 0));
         listToAdapter.add(new Image("black kit", R.drawable.black_kit));
         listToAdapter.add(new Image("gray kit", R.drawable.gray_kit));
         listToAdapter.add(new Image("red kit", R.drawable.red_kit));
