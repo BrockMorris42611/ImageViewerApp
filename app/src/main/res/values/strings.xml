@@ -3,4 +3,12 @@
     <string name="activity_one_name">Selector</string>
     <string name="activity_two_name">Display</string>
     <string name="instructions">Please choose from a cat from below.</string>
+    <string-array name="cat_picture_names">
+        <item>black kit</item>
+        <item>gray kit</item>
+        <item>red kits</item>
+        <item>tigre</item>
+        <item>white kit</item>
+        <item>cup kits</item>
+    </string-array>
 </resources>

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -27,7 +28,6 @@ import static android.graphics.Color.WHITE;
 public class SelectionActivity extends AppCompatActivity {
 
     ImageAdapter AdapterForCats;
-    boolean touched = false;
     GridView menu;
     TextView instructions;
 
@@ -46,15 +46,18 @@ public class SelectionActivity extends AppCompatActivity {
         instructions.setText(R.string.instructions);
         instructions.setTextSize(20);
 
+        Resources stringRes = getResources();
+        String[] cat_pic_names = stringRes.getStringArray(R.array.cat_picture_names);
 
         ArrayList<Image> listToAdapter = new ArrayList<Image>(); //Create the array list to hold all the Image objects
         //In this part below i am setting up a new Image object for each image
-        listToAdapter.add(new Image("black kit", R.drawable.black_kit));
-        listToAdapter.add(new Image("gray kit", R.drawable.gray_kit));
-        listToAdapter.add(new Image("red kits", R.drawable.red_kit));
-        listToAdapter.add(new Image("tigre", R.drawable.tigre));
-        listToAdapter.add(new Image("white kit", R.drawable.white_kit));
-        listToAdapter.add(new Image("cup kits", R.drawable.cup_kits));
+        listToAdapter.add(new Image(cat_pic_names[0], R.drawable.black_kit));
+        listToAdapter.add(new Image(cat_pic_names[1], R.drawable.gray_kit));
+        listToAdapter.add(new Image(cat_pic_names[2], R.drawable.red_kit));
+        listToAdapter.add(new Image(cat_pic_names[3], R.drawable.tigre));
+        listToAdapter.add(new Image(cat_pic_names[4], R.drawable.white_kit));
+        listToAdapter.add(new Image(cat_pic_names[5], R.drawable.cup_kits));
+
 
         AdapterForCats = new ImageAdapter(this ,listToAdapter); // set up the new adapter
 
